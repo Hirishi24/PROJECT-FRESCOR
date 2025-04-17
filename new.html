@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frescor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+            z-index: 100;
+            padding: 10px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 5px;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 3px;
+            background: black;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        /* Navigation Bar - Hidden by default */
+        .nav {
+            position: absolute;
+            top: 30px;
+            right: -100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            transition: 0.5s;
+            z-index: 99;
+            border-radius: 10px 0 0 10px;
+            box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+
+        /* Show menu on hover */
+        .menu-toggle:hover + .nav,
+        .nav:hover {
+            right: 30px;
+        }
+
+        /* Top Half Styling */
+        .top-half {
+            height: 50%;
+            background-color: rgba(0, 180, 216, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .top-half h1 {
+            font-size: 180px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        /* Flipping Animation */
+        .mirrored-s {
+            display: inline-block;
+            animation: flipS 3s ease-in-out forwards;
+        }
+
+        @keyframes flipS {
+            0% { transform: scaleX(1); }
+            50% { transform: scaleX(-1); }
+            100% { transform: scaleX(-1); }
+        }
+
+        /* Bottom Half Styling with Background Image */
+        .bottom-half {
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 119, 182, 0.4), rgba(0, 180, 216, 0.4)), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') center/cover;
+        }
+
+        .bottom-content p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 17px 28px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-half h1 {
+                font-size: 60px;
+            }
+            .btn {
+                font-size: 18px;
+                padding: 12px 24px;
+            }
+            .menu-toggle {
+                top: 20px;
+                right: 20px;
+            }
+            .nav {
+                top: 20px;
+                right: -100%;
+                padding: 10px 15px;
+            }
+            .nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            .menu-toggle:hover + .nav,
+            .nav:hover {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-half">
+        <!-- Hamburger Menu -->
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav">
+            <a href="succ.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="garb.html">Events</a>
+            <a href="booking.html">Book now</a>
+        </nav>
+        
+        <div class="title">
+            <h1>FRE<span class="mirrored-s">S</span>COR</h1>
+        </div>
+    </div>
+
+    <div class="bottom-half">
+        <div class="bottom-content">
+            <p>Experience freshness like never before.</p>
+            <a href="intro.html" class="btn">Explore</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Frescor Event Management</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background:linear-gradient(rgba(0, 119, 182, 0.4), rgba(0, 180, 216, 0.4));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: rgba(0, 180, 216, 0.4);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: rgba(0, 180, 216, 0.4);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background-color: rgba(0, 180, 216, 0.4);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .mission-statement {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: rgba(0, 180, 216, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color:rgba(0, 180, 216, 0.4);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .member-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid #f1f1f1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            color:rgba(0, 180, 216, 0.4);
+            margin-bottom: 5px;
+        }
+
+        .member-position {
+            color: rgba(0, 180, 216, 0.4);
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background:linear-gradient(rgba(0, 119, 182, 0.4), rgba(0, 180, 216, 0.4));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: rgba(0, 180, 216, 0.4);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color:rgba(0, 180, 216, 0.4)
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                padding: 20px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">FRESCOR</div>
+            <div class="tagline">Creating unforgettable event experiences</div>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 2015, Frescor began with a simple passion for bringing people together through memorable events. What started as a small team of event enthusiasts has grown into a premier event management company known for creativity, precision, and exceptional service.</p>
+                    <p>Over the years, we've had the privilege of planning and executing hundreds of events, from intimate weddings to large-scale corporate conferences. Each event has taught us something new and helped us refine our approach to create truly exceptional experiences.</p>
+                    <p>At Frescor, we believe that every event tells a story. Our mission is to help you tell yours in the most beautiful, engaging, and unforgettable way possible.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Event planning team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Our Mission</h2>
+            <p class="mission-statement">"To transform ordinary gatherings into extraordinary experiences through innovative design, flawless execution, and a passionate commitment to our clients' visions."</p>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="service-title">Corporate Events</h3>
+                    <p>Conferences, product launches, team building, and corporate celebrations designed to impress and inspire.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="service-title">Weddings</h3>
+                    <p>Breathtaking weddings that reflect your unique love story, from intimate ceremonies to grand celebrations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3 class="service-title">Social Events</h3>
+                    <p>Birthdays, anniversaries, and milestone celebrations crafted to create lasting memories.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="service-title">Virtual Events</h3>
+                    <p>Engaging online experiences that connect people across distances with cutting-edge technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team member" class="member-photo">
+                    <h3 class="member-name">Sarah Johnson</h3>
+                    <p class="member-position">Founder & CEO</p>
+                    <p>With 15 years in the industry, Sarah brings vision and creativity to every event.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team member" class="member-photo">
+                    <h3 class="member-name">Michael Chen</h3>
+                    <p class="member-position">Creative Director</p>
+                    <p>Michael's innovative designs have won multiple industry awards.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team member" class="member-photo">
+                    <h3 class="member-name">Emily Rodriguez</h3>
+                    <p class="member-position">Operations Manager</p>
+                    <p>Emily ensures every detail is perfect and every event runs smoothly.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team member" class="member-photo">
+                    <h3 class="member-name">David Wilson</h3>
+                    <p class="member-position">Client Relations</p>
+                    <p>David builds lasting relationships and understands exactly what clients want.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Ready to Create Something Amazing?</h2>
+            <p>Let's discuss how we can make your next event truly unforgettable.</p>
+            <a href="#" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">FRESCOR</div>
+            <p>Creating moments that matter</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="copyright">© 2023 Frescor Event Management. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
